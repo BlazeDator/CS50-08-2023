@@ -1,0 +1,30 @@
+sort1 uses: Bubble sort
+
+How do you know?:
+I believe it's Bubble sort, since, when the numbers are sorted, it takes almost infinitely less time, to sort.
+Since it just checks each number against each other, and if there's nothing to do, as was the sorted case, it's finished.
+
+50000 random - real 7.524s
+50000 sorted - real 0.490s
+50000 reversed - real 5.615s
+
+sort2 uses: Merge sort
+
+How do you know?:
+This were the results I got back, since it can handle 3 completely different cases with ease,
+I have to assume it's the merge sort since it has the lowest Theta notation and can handle all cases similarly.
+
+50000 random - real 0.696s
+50000 sorted - real 0.536s
+50000 reversed - real 0.614s
+
+sort3 uses: Selection sort
+
+How do you know?:
+All results being similar, and higher then the supposed merge sort, makes it look like selection, and since
+whatever the way the numbers are arranged it takes a similar time, meaning its looping through the whole file
+and selecting the smaller one to sort.
+
+50000 random - real 3.051s
+50000 sorted - real 3.390s
+50000 reversed - real 3.328s

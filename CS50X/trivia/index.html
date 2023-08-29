@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function()
+            {
+
+                let mc1 = document.querySelectorAll('div#mc1 button.btnb');
+
+                for (let i = 0; i < mc1.length; i++)
+                {
+                    mc1[i].addEventListener('click', function()
+                    {
+                        mc1[i].style.backgroundColor = 'red';
+                        document.querySelector('div#mc1 p.fb').innerHTML = "Incorrect!";
+                    });
+                }
+
+                document.querySelector('div#mc1 button.btng').addEventListener('click', function()
+                {
+                    document.querySelector('div#mc1 button.btng').style.backgroundColor = 'Green';
+                    document.querySelector('div#mc1 p.fb').innerHTML = "Correct!";
+                });
+
+
+
+                document.querySelector('div#wq1 button#submit').addEventListener('click', function()
+                {
+                    let name = document.querySelector('div#wq1 input#name').value;
+                    if (name.toUpperCase() == "JON SNOW")
+                    {
+                        document.querySelector("div#wq1 input#name[type='text']").style.backgroundColor = "green";
+                        document.querySelector("div#wq1 p.fb").innerHTML = "Correct!";
+                    }
+                    else
+                    {
+                        document.querySelector("div#wq1 input#name[type='text']").style.backgroundColor = "red";
+                        document.querySelector("div#wq1 p.fb").innerHTML = "Incorrect!";
+                    }
+                });
+
+
+
+                let mc2 = document.querySelectorAll('div#mc2 button.btnb');
+
+                for (let i = 0; i < mc2.length; i++)
+                {
+                    mc2[i].addEventListener('click', function()
+                    {
+                        mc2[i].style.backgroundColor = 'red';
+                        document.querySelector('div#mc2 p.fb').innerHTML = "Incorrect!";
+                    });
+                }
+
+                document.querySelector('div#mc2 button.btng').addEventListener('click', function()
+                {
+                    document.querySelector('div#mc2 button.btng').style.backgroundColor = 'Green';
+                    document.querySelector('div#mc2 p.fb').innerHTML = "Correct!";
+                });
+
+                document.querySelector('div#mc2 button.btng').addEventListener('click', function()
+                {
+                    document.querySelector('div#mc2 button.btng').style.backgroundColor = 'Green';
+                    document.querySelector('div#mc2 p.fb').innerHTML = "Correct!";
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Who was the composer of Game of Thrones soundtrack ?</h3>
+                <div id="mc1">
+                    <button class="btnb">Hans Zimmer</button>
+                    <button class="btnb">Michael Giacchino</button>
+                    <button class="btng">Ramin Djawadi</button>
+                    <button class="btnb">Alan Silvestri</button>
+                    <p class="fb"></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What living character from Game of Thrones, was named Aegon Targaryen at birth ?(Include First and Last name)</h3>
+                <div id="wq1">
+                    <input id="name" type="text" autofocus  autocomplete="off">
+                    <button id="submit">Submit</button>
+                    <p class="fb"></p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 3: Multiple Choice </h2>
+                <hr>
+                <h3>What character from Game of Thrones was known as "The Imp"?</h3>
+                <div id="mc2">
+                    <button class="btnb">Robb Stark</button>
+                    <button class="btng">Tyrion Lannister</button>
+                    <button class="btnb">Theon Greyjoy</button>
+                    <button class="btnb">Oberyn Martell</button>
+                    <p class="fb"></p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
