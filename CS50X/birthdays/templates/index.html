@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="/static/styles.css" rel="stylesheet">
+        <title>Birthdays</title>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Birthdays</h1>
+        </div>
+        <div class="container">
+            <div class="section">
+
+                <h2>Add a Birthday</h2>
+
+                <form action="/" method="POST">
+                    <input autocomplete="off" type="text"   name="name"    placeholder="Name"   required>
+                    <input type="number" name="day"     placeholder="Day"    required min="1" max="31">
+                    <input type="number" name="month"   placeholder="Month"  required min="1" max="12">
+                    {% if id %}<!-- Check if editing -->
+                    <input name="id" type="hidden" value="{{ id }}">
+                    {% endif%}
+                    <input type="submit">
+                </form>
+                {% if error %}<!-- Check if error has a value, if so show it -->
+                    {{error}}
+                {% endif%}
+            </div>
+
+            <div class="section">
+
+                <h2>All Birthdays</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Birthday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        {% for birthday in birthdays %}
+                                <tr>
+                                    <td>{{ birthday["name"] }}</td>
+                                    <td>{{ birthday["day"] }} / {{ birthday["month"] }}</td>
+                                    <td style="width:7%;">
+                                        <form action="/delete" method="POST">
+                                            <input name="id" type="hidden" value="{{ birthday.id }}">
+                                            <input type="submit" value="Delete">
+                                        </form>
+                                    </td>
+                                    <td style="width:7%;">
+                                        <form action="/edit" method="POST">
+                                            <input name="id" type="hidden" value="{{ birthday.id }}">
+                                            <input type="submit" value="Edit">
+                                        </form>
+                                    </td>
+                                </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>

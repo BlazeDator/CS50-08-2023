@@ -1,0 +1,107 @@
+body
+{
+    background-color:#ebebeb;/*a greyish tone to reduce eye strain*/
+    font-size:1.7rem;/*after testing different measures, this size seems to work well in multiple devices*/
+}
+header
+{
+    z-index:1;/*I was having some problems where the movies shows cards where on top of the nav bar, found this solution*/
+    /*So it remains on top of the page for navigation*/
+    position:sticky;
+    top:0;
+    width:100%;
+}
+div#content
+{
+    min-height:100vh;/*so even if there's no content the footer goes to the bottom of the page, since it needs a block pushing it*/
+    max-width:100%;
+    padding:3%;
+    text-align: justify;/*so text is justified*/
+}
+footer
+{
+    /*making it remain on bottom and general styling*/
+    position:fixed;
+    bottom:0;
+    width:100%;
+    padding:5px;
+    text-align:center;
+}
+div
+{
+    /*general styling*/
+    margin-top:1%;
+    margin-bottom:1%;
+}
+
+a.nav-link, a.nav-link:hover, a.nav-link:visited
+{
+    /*making sure text remains white*/
+    color:white;
+    margin:5px;
+}
+
+/*differentiating button clicks and active buttons*/
+a.btn
+{
+    background-color:#252b36;
+}
+a.btn.active
+{
+    background-color:#0d131c;
+}
+a.btn:active
+{
+    background-color:#0d131c;
+}
+h6
+{
+    color:white;
+}
+/*making line<hr> fill the div#content*/
+hr
+{
+    width:100%;
+}
+
+img#profile
+{
+    /*general styling*/
+    width:200px;
+    height:200px;
+    float:right;
+    margin-left:20px;
+    margin-bottom:25px;
+}
+video.games-imgs
+{
+    /*styling and making sure it works well with the text and hr line*/
+    width:200px;
+    height:300px;
+    float:left;
+    margin-right:20px;
+    margin-bottom:25px;
+}
+div.card
+{
+    width:20rem;
+    margin:0;
+}
+div#mshows
+{
+    /*Centering the cards evenly in any device*/
+    display: flex;
+    justify-content:space-evenly;
+    text-align: center;
+}
+
+iframe
+{
+    /*This width and height is calculation to get a 16:9 ratio out of the viewport dimensions*/
+    width:65vw;
+    height:36.56vw;
+    /*This is about centering the video*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

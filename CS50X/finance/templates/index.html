@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Summary
+{% endblock %}
+
+{% block main %}
+    <h1>Summary:</h1>
+    <h4>Current Cash:</h4> {{ cash }}
+    <hr>
+    <table class="table">
+        <tr>
+            <td>Company Symbol</td><td>Shares</td><td>Share price</td><td>Holdings value</td>
+        </tr>
+        {% for row in info %}
+            <tr>
+                <td>{{ row.symbol }}</td>
+                <td>{{ row.shares }}</td>
+                <td>{{ prices[row.symbol] }}</td>
+                <td>{{ holdings[row.symbol] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <h4>Assets + Cash:</h4> {{ total }}
+{% endblock %}
